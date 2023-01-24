@@ -1,0 +1,102 @@
+@use "variables" as v;
+@use "sass:map";
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    background-color:  map.get(v.$theme_colors, "component_background");
+
+    .section_image  {
+        header {
+            position: absolute;
+            top: 4.5rem;
+        }
+    }
+
+    .section_form {
+        padding-left: 5rem;
+        
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: map.get(v.$theme_colors, "bold_text");
+            // font-family: map.get(v.$theme_fonts, "main");
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 3.4125rem;
+        }
+
+        form {
+            .input_section {
+                input {
+                    display: block;
+                    width: 27.9rem;
+                    height: 3.125rem;
+                    margin-top: 1.5rem;
+                    padding: .5rem;
+                    outline: none;
+                    border-radius: .5rem;
+                    color: map.get(v.$theme_colors, "text");
+                    border-color: map.get(v.$theme_colors, "border");
+                    background-color: map.get(v.$theme_colors, "component_background");
+                }
+
+                .password_section {
+                    display: flex;
+                    align-items: center;
+
+                    .show_password {
+                        align-self: flex-end;
+                        margin-left: -4rem;
+                        margin-bottom: .855rem;
+                        color: map.get(v.$theme_colors, "base");
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            .forgot_password {
+                margin: 1rem 0;
+                a {
+                    color: map.get(v.$theme_colors, "base");
+                    font-size: 0.75rem;
+                    letter-spacing: 10%;
+                    line-height: 1.05rem;
+                    text-decoration: none;
+                }
+            }
+
+            button {
+                width: 27.9rem;
+                height: 3rem;
+                font-family: map.get(v.$theme_fonts, "text_primary"), sans-serif;
+                font-weight: 600;
+                font-size: 0.75rem;
+                letter-spacing: 10%;
+                line-height: 1.195rem;
+                border: none;
+                border-radius: .5rem;
+                background-color: map.get(v.$theme_colors, "base");
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+
+     
+
+    .section_form .input_section {
+        display: block;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
