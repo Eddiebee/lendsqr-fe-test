@@ -1,6 +1,12 @@
 @use "./styles/variables" as v;
 @use "sass:map";
 
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     font-family: map.get(v.$theme_fonts, "text_primary"), sans-serif;
     line-height: 1.5;
