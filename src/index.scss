@@ -1,1 +1,16 @@
+@use "./styles/variables" as v;
+@use "sass:map";
 
+:root {
+    font-family: map.get(v.$theme_fonts, "text_primary"), sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: map.get(v.$theme_colors, "text");
+    background-color: map.get(v.$theme_colors, "background");
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
