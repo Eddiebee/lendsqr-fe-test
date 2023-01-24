@@ -1,0 +1,13 @@
+@use "sass:map";
+
+$theme_colors: (
+    "base": #39CDCC,
+    "background": #E5E5E5,
+    "component_background": #FFFFFF,
+    "bold_text":#213F7D,
+    "text": #545F7D,
+    "headings": #000000,
+    "black_listed": #E4033B,
+    "active": #39CD62,
+    "pending": #E9B200,
+);
