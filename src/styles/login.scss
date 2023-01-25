@@ -1,29 +1,60 @@
 @use "variables" as v;
 @use "sass:map";
 
+/* Using SCSS variables to store breakpoints */
+$breakpoint: 1200px;
+
 .container {
     display: grid;
     min-height: 100vh;
     place-items: center;
     background-color:  map.get(v.$theme_colors, "component_background");
 
+    .container_header {
+        display: block;
+        width: 100%;
+        padding-left: 4rem;
+        text-align: left;
+    }
+
+    .section_form .input_section {
+            display: block;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $breakpoint) {
+        display: block;
+        padding: 4rem 2rem;
+
+        .container_header {
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .grid {
+            display: block;
+        }
+    }
+
     .section_image  {
-        header {
-            position: absolute;
-            top: 4.5rem;
+        @media only screen and (max-width: $breakpoint) {
+            .header_img {
+                    display: none;
+            }
         }
     }
 
     .section_form {
         padding-left: 5rem;
-        
-        header {
-            margin-bottom: 2rem;
-        }
+        display: flex;
+        flex-direction: column;
 
         h1 {
             color: map.get(v.$theme_colors, "bold_text");
-            // font-family: map.get(v.$theme_fonts, "main");
             font-weight: 700;
             font-size: 2.5rem;
             line-height: 3.4125rem;
@@ -31,6 +62,7 @@
 
         form {
             .input_section {
+
                 input {
                     display: block;
                     width: 27.9rem;
@@ -42,6 +74,11 @@
                     color: map.get(v.$theme_colors, "text");
                     border-color: map.get(v.$theme_colors, "border");
                     background-color: map.get(v.$theme_colors, "component_background");
+
+                    @media only screen and (max-width: $breakpoint) {
+                        width: 100%
+                    }
+
                 }
 
                 .password_section {
@@ -83,20 +120,19 @@
                 background-color: map.get(v.$theme_colors, "base");
                 cursor: pointer;
             }
+
+            @media only screen and (max-width: $breakpoint) {
+                button {
+                    width: 100%;}
+            }
         }
 
 
+    @media only screen and (max-width: $breakpoint) {
+        padding-left: 0;
+        }
     }
 
 
-     
-
-    .section_form .input_section {
-        display: block;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+    
 }

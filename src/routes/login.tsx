@@ -7,14 +7,14 @@ import LoginForm from "./../ui/LoginForm";
 const Login = () => {
   return (
     <main className="container">
+      <header className="container_header">
+        <a href="/">
+          <img src={lendsqrLogo} alt="Leadsqr logo" />
+        </a>
+      </header>
       <div className="grid">
         <section className="section_image">
-          <header>
-            <a href="/">
-              <img src={lendsqrLogo} alt="Leadsqr logo" />
-            </a>
-          </header>
-          <img src={signInImage} alt="Sign in image" />
+          <img src={signInImage} alt="Sign in image" className="header_img" />
         </section>
         <section className="section_form">
           <LoginForm />
