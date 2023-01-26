@@ -1,11 +1,14 @@
 import "../styles/login.scss";
 import lendsqrLogo from "../assets/lendsqr.svg";
 import signInImage from "../assets/sign_in.svg";
-import Form from "../components/Form";
 import LoginForm from "./../ui/LoginForm";
+import { Navigate } from "react-router-dom";
+import { userIsLoggedIn } from "./root";
 
 const Login = () => {
-  return (
+  return userIsLoggedIn ? (
+    <Navigate to="/dashboard" />
+  ) : (
     <main className="container">
       <header className="container_header">
         <a href="/">
