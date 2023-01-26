@@ -1,8 +1,8 @@
 @use "variables" as v;
 @use "sass:map";
 
-/* Using SCSS variables to store breakpoints */
 $breakpoint: 1200px;
+$tablet_breakpoint: 576px;
 
 .container {
     display: grid;
@@ -24,6 +24,7 @@ $breakpoint: 1200px;
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 5rem;
     }
 
     @media only screen and (max-width: $breakpoint) {
@@ -78,7 +79,6 @@ $breakpoint: 1200px;
                     @media only screen and (max-width: $breakpoint) {
                         width: 100%
                     }
-
                 }
 
                 .password_section {
@@ -127,12 +127,14 @@ $breakpoint: 1200px;
             }
         }
 
-
-    @media only screen and (max-width: $breakpoint) {
-        padding-left: 0;
+        @media only screen and (max-width: $breakpoint) {
+            width: 60%;
+            margin: 0 auto;
+            padding-left: 0;
         }
-    }
 
-
-    
+        @media only screen and (max-width: $tablet_breakpoint) {
+            width: 100%;
+        }
+    }    
 }
