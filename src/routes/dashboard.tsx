@@ -2,9 +2,8 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { userIsLoggedIn } from "./root";
 
-// let userIsLoggedIn = !!localStorage.getItem("loggedInUser");
-
 const Dashboard = () => {
+  let userIsLoggedIn = !!localStorage.getItem("loggedInUser");
   return userIsLoggedIn ? (
     <div>dashboard</div>
   ) : (

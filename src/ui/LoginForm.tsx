@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import Form from "../components/Form";
+import { useNavigate } from "react-router-dom";
 
 type LoginDetails = {
   email: string;
@@ -14,10 +15,15 @@ const LoginForm = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
       localStorage.setItem("loggedInUser", loginDetails.email);
+      if (localStorage.getItem("loggedInUser")) {
+        navigate("/dashboard");
+      }
     } catch (error) {
       throw error;
     }
