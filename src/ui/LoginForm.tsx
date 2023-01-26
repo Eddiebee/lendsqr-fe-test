@@ -16,7 +16,6 @@ const LoginForm = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    alert("submitted");
     try {
       localStorage.setItem("loggedInUser", loginDetails.email);
     } catch (error) {
